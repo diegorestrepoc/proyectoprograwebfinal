@@ -1,69 +1,7 @@
-<!DOCTYPE html>
-<html lang="es-cl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Implementando Bootstrap PGY3121-001D">
-    <meta name="author" content="Esteban Dido">
-    <meta name="keywords" content="bootstrap">
-
-    <!-- Precargar CSS Boostrap Locales -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
-
-    <!-- Cargar CSS propios -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-
-    <link rel="icon" href="assets/img/logo.png" type="image/png">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
-
-    <title>Cotiza Online | Vision Gaming</title>
-</head>
-<body>
-
-     <!--Navbar-->
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <img src="assets/img/logo2.png" alt="LOGO" width="257px" height="60px">
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-     data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-      aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                
-                <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/cotizacion/">Cotización</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/contact/">Contactanos!</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/conocenos/">Nosotros</a>
-            </li>
-        </ul>
-    </div>
-    <button class="btn btn-success" type="button" onclick="apagarLuz()">Modo oscuro</button>
-
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
-        <ul class="navbar-nav">
-            <li class="nav-item "> 
-                <a class="nav-link" href="Inicio-sesion.html">| Iniciar sesión </a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="Registro.html">| Registrarse </a>
-            </li>
-        </ul>
-    
-    </nav>
+{% extends 'core/base.html'%}
+{%block title%}Nosotros{% endblock %}
+{%block content%}
+    {% load static %}
 
 
  <!--LABEL Catalogo--> 
@@ -268,7 +206,7 @@
 
 
        <!--Footer Section -->
-       {% extends 'core/base.html'%}
+
        <!-- FIN Footer Section -->
 
     <!-- Preacargar JS Boostrap al final del documento -->
@@ -279,3 +217,4 @@
     
 </body>
 </html>
+{% endblock %}

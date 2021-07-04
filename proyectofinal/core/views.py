@@ -13,7 +13,7 @@ def cotizacion(request):
     return render(request,"core/cotizacion.html")
 
 def iniciosesion(request):
-    return render(request,"/iniciosesion/")
+    return render(request,"core/iniciosesion.html/")
 
 def registro(request):
     return render(request,"core/registro.html")
