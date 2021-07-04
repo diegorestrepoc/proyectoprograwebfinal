@@ -11,7 +11,7 @@
 </div>
 <body>
 
-    {% static 'core/img/' %}
+    
 
     <!--banners publicidad-->
     <div class="float-md-left" style="margin-top: 3ch;">
@@ -41,16 +41,16 @@
                 <!-- Slideshow -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="assets/img/hardware1.jpg" class="img-fluid" alt="Hardware parts" width="1200" height="500">
+                        <img src="{% static 'core/img/hardware1.jpg' %}" class="img-fluid" alt="Hardware parts" width="1200" height="500">
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/img/hardware2.jpg" class="img-fluid" alt="Procesador" width="1200" height="500">
+                        <img src="{% static 'core/img/hardware2.jpg' %}" class="img-fluid" alt="Procesador" width="1200" height="500">
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/img/hardware3.JPG" class="img-fluid" alt="Graficas" width="1200" height="500">
+                        <img src="{% static 'core/img/hardware3.JPG' %}" class="img-fluid" alt="Graficas" width="1200" height="500">
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/img/hardware4.JPG" class="img-fluid" alt="Teclado" width="1200" height="500">
+                        <img src="{% static 'core/img/hardware4.JPG' %}" class="img-fluid" alt="Teclado" width="1200" height="500">
                     </div>
                 </div>
 
@@ -77,7 +77,7 @@
             <div class="col-md-4 mb-2 mt-2">
                 <div class="card ">
                     <div class="card-header">
-                        <img class="card-img-top" src="assets/img/3090.png" alt="3090">
+                        <img class="card-img-top" src="{% static 'core/img/3090.png' %}" alt="3090">
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">Zotac GAMING GeForce RTX 3060 Twin Edge OC</h4>
@@ -98,7 +98,7 @@
             <div class="col-md-4 mb-2 mt-2">
                 <div class="card ">
                     <div class="card-header" >
-                        <img class="card-img-top " src="assets/img/logitech g pro.png" alt="Imagen" >
+                        <img class="card-img-top " src="{% static 'core/img/logitech g pro.png' %}" alt="Imagen" >
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">Logitech G Pro Wireless Gaming Mouse - Black</h4>
@@ -119,7 +119,7 @@
             <div class="col-md-4 mb-2 mt-2">
                 <div class="card ">
                     <div class="card-header">
-                        <img class="card-img-top" src="assets/img/intel.png"Imagen">
+                        <img class="card-img-top" src="{% static 'core/img/intel.png' %}" alt= "Imagen">
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">Intel Core i9-9900K Coffee Lake</h4>
@@ -158,7 +158,7 @@
                     <div class="card-deck">
                         <div class="card">
                             <a href="https://www.solotodo.cl/products/104593-acer-aspire-nitro-5-an515-55-73u7-1-nhqb2al0041">
-                                <img class="card-img-top" src="assets/img/note.png" alt="Imagen">
+                                <img class="card-img-top" src="{% static 'core/img/note.png' %}" alt="Imagen">
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">Acer Aspire Nitro 5</h4>
@@ -177,7 +177,7 @@
                         </div>
                         <div class="card">
                             <a href="https://www.solotodo.cl/products/81452-logitech-g203-lightsync-black-910-005793">
-                                <img class="card-img-top" src="assets/img/mause.png" alt="Imagen">
+                                <img class="card-img-top" src="{% static 'core/img/mause.png' %}" alt="Imagen">
                              </a>
                             <div class="card-body">
                                 <h4 class="card-title">Logitech G203 Lightsync Black</h4>
@@ -197,7 +197,7 @@
                         </div>
                         <div class="card ">
                             <a href="https://www.solotodo.cl/products/48372-redragon-devarajas-k556rgb">
-                                <img class="card-img-top" src="assets/img/teclado.png" alt="Imagen">
+                                <img class="card-img-top" src="{% static 'core/img/teclado.png' %}" alt="Imagen">
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">Redragon Devarajas</h4>
@@ -217,7 +217,7 @@
                         </div>
                         <div class="card ">
                             <a href="https://www.solotodo.cl/products/96366-dragster-gt500-sky-blue-gt500sb">
-                                <img class="card-img-top" src="assets/img/silla.png" alt="Imagen">
+                                <img class="card-img-top" src="{% static 'core/img/silla.png' %}" alt="Imagen">
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">Dragster GT500 - Sky Blue</h4>
@@ -295,12 +295,9 @@
        
        <!-- FIN Footer Section -->
 
+       <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+       <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
-    <!-- Preacargar JS Boostrap al final del documento -->
-    <!-- El orden de carga es jQuery, Popper.js, Boostrap.js -->
-    <script src="assets/js/jquery-3.5.1.slim.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
 
 
     <script>
