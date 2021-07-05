@@ -10,7 +10,7 @@ class Marca(models.Model):
         verbose_name_plural = 'marcas'
         ordering = ["nombreMarca"]
 
-    def str(self):
+    def __str__(self):
         return self.nombreMarca
 
 class Producto(models.Model):
@@ -26,5 +26,5 @@ class Producto(models.Model):
             verbose_name_plural = 'productos'
             ordering = ["descripcion"]
 
-    def str(self):
-            return self.descripcion
+    def __str__(self):
+            return self.descripcion   

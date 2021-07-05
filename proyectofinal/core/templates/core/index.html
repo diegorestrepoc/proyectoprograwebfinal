@@ -71,6 +71,7 @@
     <br>
 
     <div class="container">
+        {% for producto in productos %}
         <h1 class="display-4">Recién Llegados</h1>
         <hr>
         <div class="row mt-4 mb-4">
@@ -79,17 +80,19 @@
                     <div class="card-header">
                         <img class="card-img-top" src="{% static 'core/img/3090.png' %}" alt="3090">
                     </div>
+                    
                     <div class="card-body">
-                        <h4 class="card-title">Zotac GAMING GeForce RTX 3060 Twin Edge OC</h4>
+                        <h4 class="card-title">{{producto.descripcion}}</h4>
                         <p class="card-text">
                         <ul style="list-style-type: none;">
-                            <li class="text-align: justify"><b>Fabricante</b> Zotac</li>
+                            <li class="text-align: justify"><b>Fabricante</b> {{producto.marca}}</li>
                             <li class="text-align: justify"><b>GPU</b> NVIDIA GeForce RTX 3060</li>
                             <li class="text-align: justify" ><b>Memoria</b> 12 GB GDDR6</li>
                             <li><br></li>
-                            <li class="text-center">$ 749.990</li>
+                            <li class="text-center">$ {{producto.precio}}</li>
                         </ul></p>
                     </div>
+                    
                     <div class="card-footer">
                         <a href="https://www.solotodo.cl/products/100883-zotac-gaming-geforce-rtx-3060-twin-edge-oc-zt-a30600h-10m" class="btn btn-secondary" >Ver detalles</a>
                     </div>
@@ -101,7 +104,7 @@
                         <img class="card-img-top " src="{% static 'core/img/logitech g pro.png' %}" alt="Imagen" >
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title">Logitech G Pro Wireless Gaming Mouse - Black</h4>
+                        <h4 class="card-title">{{producto.descripcion}}</h4>
                         <p class="card-text">            
                         <ul style="list-style-type: none;">
                             <li class="text-align: justify"><b>Marca</b> Logitech</li>
@@ -138,7 +141,7 @@
             </div>
         </div>
     </div>
-    
+    {% endfor %}
     <br>
 
     <!--Inicio tablist-->

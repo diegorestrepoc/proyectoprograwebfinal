@@ -1,7 +1,10 @@
+from .models import Producto
 from django.shortcuts import render , HttpResponse
 
 def index(request):
-    return render(request,"core/index.html")
+    productos = Producto.objects.all()
+
+    return render(request,"core/index.html",{'productos':productos})
 
 def conocenos(request):
     return render(request,"core/conocenos.html")
@@ -13,7 +16,7 @@ def cotizacion(request):
     return render(request,"core/cotizacion.html")
 
 def iniciosesion(request):
-    return render(request,"core/iniciosesion.html/")
+    return render(request,"core/iniciosesion.html")
 
 def registro(request):
     return render(request,"core/registro.html")
