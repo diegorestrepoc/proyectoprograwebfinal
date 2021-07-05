@@ -71,11 +71,14 @@
     <br>
 
     <div class="container">
-        {% for producto in productos %}
+        
         <h1 class="display-4">Recién Llegados</h1>
         <hr>
+        
         <div class="row mt-4 mb-4">
+            {%for producto in productos %}
             <div class="col-md-4 mb-2 mt-2">
+                
                 <div class="card ">
                     <div class="card-header">
                         <img class="card-img-top" src="{% static 'core/img/3090.png' %}" alt="3090">
@@ -86,8 +89,8 @@
                         <p class="card-text">
                         <ul style="list-style-type: none;">
                             <li class="text-align: justify"><b>Fabricante</b> {{producto.marca}}</li>
-                            <li class="text-align: justify"><b>GPU</b> NVIDIA GeForce RTX 3060</li>
-                            <li class="text-align: justify" ><b>Memoria</b> 12 GB GDDR6</li>
+                            
+                            
                             <li><br></li>
                             <li class="text-center">$ {{producto.precio}}</li>
                         </ul></p>
@@ -98,50 +101,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-2 mt-2">
-                <div class="card ">
-                    <div class="card-header" >
-                        <img class="card-img-top " src="{% static 'core/img/logitech g pro.png' %}" alt="Imagen" >
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">{{producto.descripcion}}</h4>
-                        <p class="card-text">            
-                        <ul style="list-style-type: none;">
-                            <li class="text-align: justify"><b>Marca</b> Logitech</li>
-                            <li class="text-align: justify"><b>Tracking</b> Logitech Hero [Óptico]</li>
-                            <li class="text-align: justify"><b>Cantidad de botones</b> 8</li>
-                            <li><br></li>
-                            <li class="text-center">$ 199.990</li>
-                        </ul></p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://www.solotodo.cl/products/88085-logitech-g-pro-wireless-gaming-mouse-black-910-005270" class="btn btn-secondary" >Ver detalles</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-2 mt-2">
-                <div class="card ">
-                    <div class="card-header">
-                        <img class="card-img-top" src="{% static 'core/img/intel.png' %}" alt= "Imagen">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Intel Core i9-9900K Coffee Lake</h4>
-                        <p class="card-text">
-                        <ul style="list-style-type: none;">
-                            <li class="text-align: justify"><b>Frecuencia</b> 3600 MHz</li>
-                            <li class="text-align: justify"><b>Frecuencia turbo máxima</b> 5000 MHz</li>
-                            <li class="text-align: justify"><b>Núcleos / hilos </b>8 núcleos / 16 hilos</li>
-                            <li class="text-center"><br>$ 491.872</li>
-                        </ul></p></p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://www.solotodo.cl/products/52663-intel-core-i9-9900k-bx80684i99900k" class="btn btn-secondary" >Ver detalles</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+           
         </div>
     </div>
-    {% endfor %}
+    
     <br>
 
     <!--Inicio tablist-->
