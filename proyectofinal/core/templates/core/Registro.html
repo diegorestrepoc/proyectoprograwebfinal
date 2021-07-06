@@ -2,7 +2,58 @@
 {%block title%}Nosotros{% endblock %}
 {%block content%}
     {% load static %}
-<!--Fin navbar-->
+
+
+    <script>
+        $(function() 
+    {
+       $("#formuls").validate({
+            rules: {
+
+                    usuario: {
+                        required: true,
+                        type: "text"
+                    },
+                    rut: {
+                        required: true,
+                        maxlength: "9"
+                        
+                    },
+                    mails: {
+                        required: true,
+                        email:true
+                    },
+                    numbers: {
+                        required: false,
+                        minlength:"8",
+                        maxlength:"12"
+                    },
+
+                },
+                messages: {
+                    usuario: {
+                        required:'ingresa un nombre'
+                    },
+                    rut: {
+                        required: 'ingresa tu rut porfavor',
+                    },
+
+                    mails: {
+                        required: 'Ingresa un mail',
+                    },
+
+                },
+                    numbers: {
+                        minlength:"El largo no puede ser menor a 8",
+                        maxlength:"El largo no puede ser mayor a 12"
+
+                    }
+                    
+        });
+        
+    });
+    </script>
+
 
     <!--contactanos-->
         <main class="container mt-4 mb-4">
@@ -14,19 +65,19 @@
                         </div>
                         <div class="card-body">
                             <!-- Formulario -->
-                            <form action="#" method="GET" enctype="text/plain">
+                            <form action="#" method="GET" enctype="text/plain" id="formuls">
                                 <!-- Agrupar componentes usando FORM-GROUP -->
                                 <div class="form-group">
                                     <label class="font-weight-bold" for="rut">Rut:</label>
-                                    <input class="form-control" type="text" id="rut" name="rut" placeholder="Ej.12345678-9" required>
+                                    <input class="form-control" name="rut" id="rut" maxlength="9" autocomplete="off" required placeholder="Ingrese rut sin guion y con digito verificador">
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold" for="Usuario">Usuario:</label>
                                     <input class="form-control" type="Usuario" id="Usuario" name="Usuario" placeholder="" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="font-weight-bold" for="nombre">Nombres:</label>
-                                    <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Ej. Felipe Alejandro" required>
+                                    <label class="font-weight-bold" for="nombre">Nombre completo:</label>
+                                    <input class="form-control" type="text" name="usuario" id="user" autocomplete="off" required placeholder="Nombre completo">
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold" for="apellidos">Apellidos:</label>
@@ -37,7 +88,7 @@
                                 <div class="form-group row">
                                     <label for="email" class="col-sm-4 col-form-label font-weight-bold">Email:</label>
                                     <div class="col-sm-8">
-                                        <input class="form-control" type="text" id="email" name="email" placeholder="Ej.email@email.com" >
+                                        <input class="form-control" type="email" name="mails" id="mail" autocomplete="off" required placeholder="Ingrese su correo">
                                     </div>
                                
                                 </div>
@@ -51,7 +102,7 @@
                                 <div class="form-group row">
                                     <label for="validate-password" class="col-sm-4 col-form-label font-weight-bold">Confirmar contraseña:</label>
                                     <div class="col-sm-8">
-                                        <input class="form-control" type="password" id="validate-password" name="validate-password" required>
+                                        <input class="form-control" type="password" id="confirm" name="confirm" required>
                                     </div>
                                 </div>
 
@@ -142,16 +193,15 @@
                 </div>
             </div>
         </main>
-    <!--fin contactanos-->
 
-    <!--Footer Section -->
-    
-    <!-- FIN Footer Section -->
+        <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+        <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
     
    
     
-    <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
     
 </body>
 </html>
