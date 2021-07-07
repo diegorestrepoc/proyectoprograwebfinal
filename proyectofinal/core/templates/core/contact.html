@@ -1,54 +1,40 @@
 {% extends 'core/base.html'%}
 {%block title%}Nosotros{% endblock %}
 {%block content%}
+
     {% load static %}
-<body>
+    {% load crispy_forms_tags %}
 
-     <!--LABEL Contacto--> 
-    <div class="container"></div>
-     <form enctype="text/plain">
-        <div class="card">
-            <div class="d.none d-md-block mt-4 mb-4"></div>
-            <div class="card-header">
-                <h2 class="card-title" style="text-align:center;">Mandanos un mensaje
-                </h2>
-            </div>
-        </div>      
     
-     <!--Fin -->
-        
-    <div class="container">
-         <div class="table-responsive-md">
-             <div class="row">
-                <div class="col-md-6">
-                    <!-- Select-->
-                    <div class="form-group">
-                        <label for="asunto" class="font-weight-bold">Asunto:</label>
-                        <select name="asunto" id="asunto" class="form-control">
-                            <option value="Cotizacion">Cotizacion</option>
-                            <option value="ServicioCliente">Servicio al cliente</option>
-                        </select>
-                    </div>
-                    <!--Fin Select-->
+    <div class="card">
+        <div class="card-body">
+            
 
-                    <div class="form-group row">
-                        <label for="email" class="col-sm-4 col-form-label font-weight-bold">Email:</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" type="text" id="email" name="email" placeholder="Ej.email@email.com" required>
+            <div class="row">
+                <div class="col-12 col-md-6 offset-md-3">
+
+                    <form action="" method="post">
+
+                        {% csrf_token %}
+                        {{ form | crispy }}
+
+                        <div class="d-flex justify-content-center">
+                            <input type="reset" value="Cancelar">
+                            <input type="submit" value="Enviar">
                         </div>
-                    </div>
+                    </form>
+                    {{mensaje}}
+
                 </div>
-                 <div class="col-md-6">
-                     <!-- Textarea -->
-                     <div class="form-group">
-                        <label for="comentarios" class="font-weight-bold">Mensaje:</label>
-                        <textarea name="comentarios" id="comentarios" rows="5" class="form-control">¿Cómo podemos ayudarte?</textarea>
-                    </div>
-                    <input type="submit" class="btn btn-primary" style="min-width: 34em; " id="Enviar" value="Enviar">
-                 </div>
-             </div>
-         </div>
+            </div>
+
+
+
+
+        </div>
     </div>
+      
+   
     
 
     <!-- Preacargar JS Boostrap al final del documento -->

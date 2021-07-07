@@ -28,3 +28,18 @@ class Producto(models.Model):
 
     def __str__(self):
             return self.descripcion   
+
+class Contacto(models.Model):
+    asunto = models.CharField(max_length=50,verbose_name='Asunto')
+    email = models.CharField(max_length=40,verbose_name='Correo')
+    mensaje = models.TextField(max_length=200, verbose_name='Mensaje')
+    
+    created = models.DateTimeField(verbose_name='Fecha creación',auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'contacto'
+        verbose_name_plural = 'contactos'
+        ordering = ["-created"]
+
+    def __str__(self):
+        return self.asunto
