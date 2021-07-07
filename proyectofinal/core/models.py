@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Marca(models.Model):
-    idMarca = models.IntegerField(primary_key=True, verbose_name='Id')
+    idMarca = models.CharField(primary_key=True,max_length=50, verbose_name='Id')
     nombreMarca = models.CharField(max_length=50, verbose_name="Marca")
 
     class Meta:
@@ -13,6 +13,18 @@ class Marca(models.Model):
     def __str__(self):
         return self.nombreMarca
 
+class Componente(models.Model):
+    idComponente = models.CharField(primary_key=True, max_length=50, verbose_name='Id')
+    nombreComponente = models.CharField(max_length=50, verbose_name="Componente")
+
+    class Meta:
+        verbose_name = 'componente'
+        verbose_name_plural = 'componentes'
+        ordering = ["nombreComponente"]
+
+    def __str__(self):
+        return self.nombreComponente
+
 class Producto(models.Model):
     idProducto = models.CharField(primary_key=True, max_length=10,verbose_name='Código')
     descripcion = models.CharField(max_length=100,verbose_name='Descripción')
@@ -20,6 +32,7 @@ class Producto(models.Model):
     cantidad = models.IntegerField(verbose_name='Stock')
     imagen = models.ImageField(verbose_name='Imagen',upload_to='productos',null=True,blank=True)
     marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
+    componente = models.ForeignKey(Componente, on_delete=models.CASCADE)
 
     class Meta:
             verbose_name = 'producto'
