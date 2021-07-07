@@ -1,9 +1,10 @@
-from .models import Producto, Contacto
+from .models import Componente, Producto, Contacto
 from django.shortcuts import render , HttpResponse
 from .forms import ContactoForm
 
 def index(request):
     productos = Producto.objects.all()
+    
 
     return render(request,"core/index.html",{'productos':productos})
 
@@ -25,7 +26,9 @@ def contact(request):
     return render(request,"core/contact.html", data)
 
 def cotizacion(request):
-    return render(request,"core/cotizacion.html")
+    componentes = Componente.objects.all()
+    return render(request,"core/cotizacion.html",{'componentes':componentes})
+    
 
 def iniciosesion(request):
     return render(request,"core/iniciosesion.html")

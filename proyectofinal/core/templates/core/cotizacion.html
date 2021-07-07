@@ -41,15 +41,16 @@
                     </thead>
                     <tbody>
                         <tr>
+                            
                             <td>Placa madre</td>
                             <td><div class="form-group">
                                 <label for="placa" class="font-weight-bold"></label>
                                 <select name="placa" id="placa" class="form-control">
-                                    <option value="msi">MSI H310M PRO-VDH PLUS ($50.000)</option>
-                                    <option value="asus">ASUS PRIME A320M-K($53.000)</option>
-                                    <option value="asrock">ASROCK FM2A68M-DG3+($49.000)</option>
+                                    {% for producto in componente %}
+                                    <option value="{{producto.descripcion}}">{{producto.descripcion}}</option>
+                                    {% endfor %}
                                 </select>
-
+                            
                             </div></td>
                             <td>-</td>
                             <td><div class="form-group">
