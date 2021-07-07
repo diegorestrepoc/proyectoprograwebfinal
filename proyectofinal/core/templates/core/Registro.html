@@ -2,6 +2,7 @@
 {%block title%}Nosotros{% endblock %}
 {%block content%}
     {% load static %}
+    {% load crispy_forms_tags %}
 
 
     <script>
@@ -55,144 +56,28 @@
     </script>
 
 
-    <!--contactanos-->
-        <main class="container mt-4 mb-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Registrate con nosotros</h3>
-                        </div>
-                        <div class="card-body">
-                            <!-- Formulario -->
-                            <form action="#" method="GET" enctype="text/plain" id="formuls">
-                                <!-- Agrupar componentes usando FORM-GROUP -->
-                                <div class="form-group">
-                                    <label class="font-weight-bold" for="rut">Rut:</label>
-                                    <input class="form-control" name="rut" id="rut" maxlength="9" autocomplete="off" required placeholder="Ingrese rut sin guion y con digito verificador">
-                                </div>
-                                <div class="form-group">
-                                    <label class="font-weight-bold" for="Usuario">Usuario:</label>
-                                    <input class="form-control" type="Usuario" id="Usuario" name="Usuario" placeholder="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="font-weight-bold" for="nombre">Nombre completo:</label>
-                                    <input class="form-control" type="text" name="usuario" id="user" autocomplete="off" required placeholder="Nombre completo">
-                                </div>
-                                <div class="form-group">
-                                    <label class="font-weight-bold" for="apellidos">Apellidos:</label>
-                                    <input class="form-control" type="text" id="apellidos" name="apellidos" placeholder="Ej. Avello Suazo" required>
-                                </div>
+<div class="card">
+    <div class="card-body">
+        
 
-                                <!-- Agrupar componentes usando FORM-GROUP ROW -->
-                                <div class="form-group row">
-                                    <label for="email" class="col-sm-4 col-form-label font-weight-bold">Email:</label>
-                                    <div class="col-sm-8">
-                                        <input class="form-control" type="email" name="mails" id="mail" autocomplete="off" required placeholder="Ingrese su correo">
-                                    </div>
-                               
-                                </div>
-                                <div class="form-group row">
-                                    <label for="password" class="col-sm-4 col-form-label font-weight-bold">Contraseña (5 carácteres mínimo):</label>
-                                    <div class="col-sm-8">
-                                        <input class="form-control" type="password" id="password" name="password" required minlength="5">
-                                    </div>
-                                    
-                                </div>
-                                <div class="form-group row">
-                                    <label for="validate-password" class="col-sm-4 col-form-label font-weight-bold">Confirmar contraseña:</label>
-                                    <div class="col-sm-8">
-                                        <input class="form-control" type="password" id="confirm" name="confirm" required>
-                                    </div>
-                                </div>
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
 
-                                <div class="form-group">
-                                    <label class="font-weight-bold" for="fecha_nac">Fecha nacimiento:</label>
-                                    <input class="form-control" type="date" id="fecha_nac" name="fecha_nac">
+                <form action="" method="post">
 
-                                </div>
-                                <!-- Radiobutton -->
-                                <div class="form-group row">
-                                    <label for="genero" class="col-sm-5 font-weight-bold">Seleccione su género:</label>
-                                    <div class="col-sm-7">
-                                        <div class="form-check">
-                                            <div class="form-check-label">
-                                                <label for="masculino" class="form-check-label">
-                                                    <input type="radio" class="form-check-input" name="genero" id="masculino" value="Masculino" >Masculino
-                                                </label>
-                                            </div>
-                                            <div class="form-check-label">
-                                                <label for="femenino" class="form-check-label">
-                                                    <input type="radio" class="form-check-input" name="genero" id="femenino" value="Femenino" >Femenino
-                                                </label>
-                                            </div>
-                                            <div class="form-check-label">
-                                                <label for="nobinario" class="form-check-label">
-                                                    <input type="radio" class="form-check-input" name="genero" id="nobinario" value="Nobinario" >No binario
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Checkbox -->
-                                <div class="form-group">
-                                    <label for="tecnologia" class="font-weight-bold">Productos en los que estás interesado:</label>
-                                    <div class="form-check">
-                                        <div class="form-check-label">
-                                            <label for="notebook" class="font-check-label">
-                                                <input type="checkbox" class="form-check-input" id="notebook" name="notebook" value="Notebook"> Notebook
-                                            </label>
-                                        </div>
-                                        <div class="form-check-label">
-                                            <label for="pc" class="font-check-label">
-                                                <input type="checkbox" class="form-check-input" id="pc" name="pc" value="Pc"> Pc de escritorio
-                                            </label>
-                                        </div>
-                                        <div class="form-check-label">
-                                            <label for="componentes" class="font-check-label">
-                                                <input type="checkbox" class="form-check-input" id="componentes" name="componentes" value="Componentes"> Componentes para pc
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+                    {% csrf_token %}
+                    {{ form | crispy }}
 
-                                <!-- Select o Listbox -->
-                                <div class="form-group">
-                                    <label for="comuna" class="font-weight-bold">Comuna:</label>
-                                    <select name="comuna" id="comuna" class="form-control">
-                                        <option value="Santiago">Santiago</option>
-                                        <option value="Macul">Macul</option>
-                                        <option value="Quinta Normal">Quinta Normal</option>
-                                        <option value="Independencia">Independencia</option>
-                                        <option value="Renca">Renca</option>
-                                        <option value="Cerro Navia">Cerro Navia</option>
-                                        <option value="San Joaquín">San Joaquín</option>
-                                    </select>
+                    
+                </form>
+                {{mensaje}}
 
-                                </div>
-
-                                <!-- Toggle Button o Switch -->
-                                <div class="form-group">
-                                    <div class="custom-control custom-switch">
-                                        <input class="custom-control-input" type="checkbox" name="aceptar_terminos" id="aceptar_terminos">
-                                        <label for="aceptar_terminos" class="custom-control-label">Aceptar los términos del contrato</label>
-                                    </div>
-                                </div>
-
-                                <!-- Botones -->
-                                <div class="form-group">
-                                    <input type="submit" class="btn btn-primary" id="registrar" value="Registrar">
-                                    <input type="reset" class="btn btn-secondary" id="cancelar" value="Cancelar">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <img class="d-none d-md-block" src="{% static 'core/img/Promo newsletter/promo.jpg' %}" alt="Imagen decorativa">
-                </div>
             </div>
-        </main>
+        </div>
+                   
+    </div>
+</div>                              
+                                
 
         <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>

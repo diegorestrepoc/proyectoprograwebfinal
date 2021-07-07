@@ -1,6 +1,7 @@
-from .models import Componente, Producto, Contacto
+from django.utils import html
+from .models import Componente, Producto, Contacto, Usuario
 from django.shortcuts import render , HttpResponse
-from .forms import ContactoForm
+from .forms import ContactoForm, UsuarioForm, CotizacionForm
 
 def index(request):
     productos = Producto.objects.all()
@@ -26,14 +27,35 @@ def contact(request):
     return render(request,"core/contact.html", data)
 
 def cotizacion(request):
-    componentes = Componente.objects.all()
-    return render(request,"core/cotizacion.html",{'componentes':componentes})
+    data = {
+        'form': CotizacionForm()
+    }
+    if request.method == 'POST':
+        formulario = CotizacionForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Cotizacion registrada"
+        else:
+            data["form"] = formulario
+    
+    return render(request,"core/cotizacion.html", data)
     
 
 def iniciosesion(request):
     return render(request,"core/iniciosesion.html")
 
 def registro(request):
-    return render(request,"core/registro.html")
+    data = {
+        'form': UsuarioForm()
+    }
+    if request.method == 'POST':
+        formulario = UsuarioForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Usuario registrado"
+        else:
+            data["form"] = formulario
+    
+    return render(request,"core/registro.html", data)
 
 

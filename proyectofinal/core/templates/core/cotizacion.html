@@ -2,6 +2,7 @@
 {%block title%}Nosotros{% endblock %}
 {%block content%}
     {% load static %}
+    {% load crispy_forms_tags %}
 
 
  <!--LABEL Catalogo--> 
@@ -22,7 +23,30 @@
 
  <!--cotizacion-->
 
- <producto>
+ <div class="card">
+    <div class="card-body">
+        
+
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+
+                <form action="" method="post">
+
+                    {% csrf_token %}
+                    {{ form | crispy }}
+
+                    <div class="d-flex justify-content-center">
+                        <input type="reset" value="Cancelar" style="background-color: #b95c62;">
+                        <input type="submit" value="Enviar" style="background-color: aquamarine;">
+                    </div>
+                </form>
+                {{mensaje}}
+
+            </div>
+        </div>
+                   
+    </div>
+</div>               
   
  <div class="container">
     <div class="table-responsive-md">
