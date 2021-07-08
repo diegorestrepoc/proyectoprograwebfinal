@@ -106,19 +106,19 @@ opciones_gpu = [
     [2,"RX 580"]
 ]
 opciones_ram = [
-    [0,"CRUCIAL 4GB"],
-    [1,"HYPERX 4GB"],
-    [2,"A-DATA 8GB"]
+    [0,"Crucial Ballistix 8GB"],
+    [1,"Kingston HyperX Fury Black 8GB"],
+    [2,"G.Skill Trident Z 8GB"]
 ]
 opciones_fuente = [
-    [0,"GIGABYTE 550W"],
-    [1,"CORSAIR 450W"],
-    [2,"GAMEMAX 650W"]
+    [0,"Fuente de Poder Gigabyte GP-P550B"],
+    [1,"Fuente de Poder Corsair 450W"],
+    [2,"Fuente de Poder GameMax 650W"]
 ]
 opciones_disco = [
-    [0,"WD 500GB"],
-    [1,"SEAGATE 2TB"],
-    [2,"WD 4TB"]
+    [0,"Western Digital Blue 500GB"],
+    [1,"Western Digital Black 1TB"],
+    [2,"Western Digital Purple 3TB"]
 ]
 opciones_gabinete = [
     [0,"GEAR BLACKSTAR"],
