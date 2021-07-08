@@ -51,6 +51,16 @@
         <li class="nav-item">
             <a class="nav-link" href="/conocenos/">Nosotros</a>
         </li>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Control de Productos
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/agregarproducto/">Agregar productos</a>
+              <a class="dropdown-item" href="#">Modificar productos</a>
+              <a class="dropdown-item" href="#">Eliminar productos</a>
+            </div>
+          </div>
     </ul>
 </div>
 
@@ -59,7 +69,9 @@
 <br>  <br/>
 
 <button style="margin: 10px" class="btn btn-success d-flex mt-4 mb-4 " type="button" onclick="encenderLuz()">Modo tradicional</button>
-
+<div id="reloj" class="reloj" >00 : 00 : 00
+</div>
+<div id="actualizar" class="actualizar"></div>
     <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Buscar</button>
@@ -106,14 +118,13 @@
                     </span>
                 </a>
             </div>
-            <div class="col-sm-12 col-md-3 mt-3 "></div>
+            <div class="col-sm-12 col-md-3 mt-3 justify-content-center ">
+                
+            </div>
+            
             <p class="main-footer text-center" style="color: gray;">Comercializadora S.A., Rut N° xxxx domiciliada en calle xxx, Santiago, Chile. Represente legal: xxxx</p>
             </div>
-            <div id="reloj" class="reloj">00 : 00 : 00
-            </div>
-            <div id="actualizar" class="actualizar"
-    
-        ></div>
+            
         </div>
     </footer>
     <!-- FIN Footer Section -->

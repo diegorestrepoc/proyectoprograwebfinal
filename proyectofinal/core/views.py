@@ -1,7 +1,7 @@
 from django.utils import html
 from .models import Componente, Producto, Contacto, Usuario
 from django.shortcuts import render , HttpResponse
-from .forms import ContactoForm, UsuarioForm, CotizacionForm
+from .forms import ContactoForm, UsuarioForm, CotizacionForm, ProductoForm
 from rest_framework import viewsets
 from .serializers import ProductoSerializer
 
@@ -64,4 +64,16 @@ def registro(request):
     
     return render(request,"core/registro.html", data)
 
+def add_producto(request):
 
+    data = {
+        'form': ProductoForm()
+    }
+    if request.method == 'POST':
+        formulario = ProductoForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Producto agregado"
+        else:
+            data["form"] = formulario
+    return render(request,"core/add_producto.html", data)

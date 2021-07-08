@@ -18,3 +18,9 @@ class CotizacionForm(forms.ModelForm):
     class Meta:
         model = Cotizar
         fields = '__all__'
+
+class ProductoForm(forms.ModelForm):
+
+    class Meta:
+        model = Producto
+        fields = '__all__'
