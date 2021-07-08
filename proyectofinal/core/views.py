@@ -2,6 +2,12 @@ from django.utils import html
 from .models import Componente, Producto, Contacto, Usuario
 from django.shortcuts import render , HttpResponse
 from .forms import ContactoForm, UsuarioForm, CotizacionForm
+from rest_framework import viewsets
+from .serializers import ProductoSerializer
+
+class ProductoViewset(viewsets.ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
 
 def index(request):
     productos = Producto.objects.all()
