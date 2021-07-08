@@ -69,8 +69,3 @@ body {
     background-color: #C70039;
 }
 
-.card-img-top {
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
-}

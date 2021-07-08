@@ -68,7 +68,10 @@
                     {% csrf_token %}
                     {{ form | crispy }}
 
-                    
+                    <div class="d-flex justify-content-center">
+                        <input style="color: grey" type="reset" value="Limpiar">
+                        <input class="btn btn-secondary" type="submit" value="Registrar">
+                    </div> 
                 </form>
                 {{mensaje}}
 
