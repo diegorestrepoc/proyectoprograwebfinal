@@ -31,13 +31,37 @@
             <div class="col-12 col-md-6 offset-md-3">
 
                 <form action="" method="post">
-
-                    {% csrf_token %}
-                    {{ form | crispy }}
-
-                    <div class="d-flex justify-content-center">
-                        <input type="reset" value="Cancelar" style="background-color: #b95c62;">
-                        <input type="submit" value="Enviar" style="background-color: aquamarine;">
+                    <div class="container">
+                        <div class="table-responsive-md">
+                            <div class="row ">
+                                <div class="col-md-6">
+                                    {% csrf_token %}
+                                    {{ form | crispy }}
+                                    <div class="d-flex justify-content-center">
+                                        <input style="color: grey" type="reset" value="Cancelar">
+                                        <input class="btn btn-secondary" type="submit" value="Enviar">
+                                    </div>                                
+                                </div>
+                                <div class="col-md-6">
+                                    <br><br><br>
+                                    <div class="card text-white   " style="background-color: #D72631; border-color: black; width: 10cm; height: 5cm;">
+                                        <img src="{% static 'core/img/pc-icono.png' %}" style="height: 2cm; width: 2cm; margin-left: 9rem;" alt="icono">
+                                        <div class="card-img-overlay">
+                                            <br><br>
+                                        <h4 class="card-title" style="text-align: center;">Recuerda que el precio final de tu PC tendrá descuento si nos envias tu cotización</h4>
+                                        </div>
+                                    </div>
+                                    <br><br><br>
+                                    <div class="card text-white   " style="background-color: gray; border-color: black; width: 10cm; height: 5cm;">
+                                        <img src="{% static 'core/img/medalla-icono.png' %}" style="height: 3cm; width: 3cm; color: black; margin-left: 8rem;" alt="icono-medalla">
+                                        <div class="card-img-overlay">
+                                            <br><br><br>
+                                        <h4 class="card-title" style="text-align: center;">Todos los PC ensamblados en Vision Gaming cuentan con un año de garantía</h4>
+                                        </div>
+                                    </div>
+                                </div>                            
+                            </div>                       
+                        </div>
                     </div>
                 </form>
                 {{mensaje}}
@@ -47,182 +71,7 @@
                    
     </div>
 </div>               
-  
- <div class="container">
-    <div class="table-responsive-md">
-        <div class="row ">
-            <div class="col-md-6">    
-                <table class="table-responsive-sm table-responsive-md">
-                    <thead>
-                        <tr>
-                            <th>Componente</th>
-                            <th>Producto</th>
-                            <th style="text-align: center;">Precio </th>
-                            <th style="text-align: center;">Eliminar</th>
-
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            
-                            <td>Placa madre</td>
-                            <td><div class="form-group">
-                                <label for="placa" class="font-weight-bold"></label>
-                                <select name="placa" id="placa" class="form-control">
-                                    {% for producto in componente %}
-                                    <option value="{{producto.descripcion}}">{{producto.descripcion}}</option>
-                                    {% endfor %}
-                                </select>
-                            
-                            </div></td>
-                            <td>-</td>
-                            <td><div class="form-group">
-                                <input type="submit" class="btn btn-primary" id="registrar" value="Eliminar">
-                            </div></td>
-                        </tr>
-                        <tr>
-                            <td>Procesador</td>
-                            <td><div class="form-group">
-                                <label for="procesador" class="font-weight-bold"></label>
-                                <select name="procesador" id="procesador" class="form-control">
-                                    <option value="msi">I5-10400F ($140.000)</option>
-                                    <option value="asus">RYZEN 3 3200g($103.000)</option>
-                                    <option value="asrock">I3-9100 ($60.000)</option>
-                                    </select>
-                                </select>
-
-                            </div></td>
-                            <td>-</td>
-                            <td><div class="form-group">
-                                <input type="submit" class="btn btn-primary" id="registrar" value="Eliminar">
-                            </div></td>
-                            
-                        </tr>
-                        <tr>
-                            <td>Tarjeta de video</td>
-                            <td><div class="form-group">
-                                <label for="tarjeta" class="font-weight-bold"></label>
-                                <select name="tarjeta" id="tarjeta" class="form-control">
-                                    <option value="msi">GTX 1650 TI ($290.000)</option>
-                                    <option value="asus">GTX 3060($800.000)</option>
-                                    <option value="asrock">RX 580 ($300.000)</option>
-                                    </select>
-                                </select>
-
-                            </div></td>
-                            <td>-</td>
-                            <td><div class="form-group">
-                                <input type="submit" class="btn btn-primary" id="registrar" value="Eliminar">
-                            </div></td>
-                            
-                        </tr>
-                        <tr>
-                            <td>Ram</td>
-                            <td><div class="form-group">
-                                <label for="ram" class="font-weight-bold"></label>
-                                <select name="ram" id="ram" class="form-control">
-                                    <option value="msi">CRUCIAL 4GB ($19.000)</option>
-                                    <option value="asus">HYPERX 4GB($25.000)</option>
-                                    <option value="asrock">A-DATA 8GB ($35.000)</option>
-                                    </select>
-                                </select>
-
-                            </div></td>
-                            <td>-</td>
-                            <td><div class="form-group">
-                                <input type="submit" class="btn btn-primary" id="registrar" value="Eliminar">
-                            </div></td>
-                            
-                        </tr>
-                        <tr>
-                            <td>Fuente de poder</td>
-                            <td><div class="form-group">
-                                <label for="fuente" class="font-weight-bold"></label>
-                                <select name="fuente" id="fuente" class="form-control">
-                                    <option value="msi">GIGABYTE 550W ($40.000)</option>
-                                    <option value="asus">CORSAIR 450W ($44.000)</option>
-                                    <option value="asrock">GAMEMAX 650W ($45.000)</option>
-                                    </select>
-                                </select>
-
-                            </div></td>
-                            <td>-</td>
-                            <td><div class="form-group">
-                                <input type="submit" class="btn btn-primary" id="eliminar" value="Eliminar">
-                            </div></td>
-                            
-                        </tr>
-                        <tr>
-                            <td>Discos duros</td>
-                            <td><div class="form-group">
-                                <label for="fuente" class="font-weight-bold"></label>
-                                <select name="fuente" id="fuente" class="form-control">
-                                    <option value="msi">Western Digital Blue 500 GB ($52.990)</option>
-                                    <option value="asus">Seagate SkyHawk 2 TB ($52.990)</option>
-                                    <option value="asrock">Western Digital Red 4 TB ($92.000)</option>
-                                    </select>
-                                </select>
-
-                            </div></td>
-                            <td>-</td>
-                            <td><div class="form-group">
-                                <input type="submit" class="btn btn-primary" id="eliminar" value="Eliminar">
-                            </div></td>
-                        </tr>
-                        <tr>
-                            <td>Gabinetes</td>
-                            <td><div class="form-group">
-                                <label for="fuente" class="font-weight-bold"></label>
-                                <select name="fuente" id="fuente" class="form-control">
-                                    <option value="msi">Gear Blackstar ($32.990)</option>
-                                    <option value="asus">Dinon Model 4 ($36.990)</option>
-                                    <option value="asrock">PowerTrain Laser Five G1 ($39.900)</option>
-                                    </select>
-                                </select>
-
-                            </div></td>
-                            <td>-</td>
-                            <td><div class="form-group">
-                                <input type="submit" class="btn btn-primary" id="eliminar" value="Eliminar">
-                            </div></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td>Total:</td>
-                            <td> <div class="form-group">
-                                <input type="submit" class="btn btn-primary" id="comprar" value="Comprar">
-                            </div></td>
-        
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-                <br><br><br>
-                <div class="card text-white   " style="background-color: #D72631; border-color: black; width: 10cm; height: 5cm;">
-                    <img src="{% static 'core/img/pc-icono.png' %}" style="height: 2cm; width: 2cm; margin-left: 9rem;" alt="icono">
-                    <div class="card-img-overlay">
-                        <br><br>
-                    <h4 class="card-title" style="text-align: center;">Recuerda que el precio final de tu PC tendrá descuento si nos envias tu cotización</h4>
-                    </div>
-                </div>
-                <br><br><br>
-                <div class="card text-white   " style="background-color: gray; border-color: black; width: 10cm; height: 5cm;">
-                    <img src="{% static 'core/img/medalla-icono.png' %}" style="height: 3cm; width: 3cm; color: black; margin-left: 8rem;" alt="icono-medalla">
-                    <div class="card-img-overlay">
-                        <br><br><br>
-                    <h4 class="card-title" style="text-align: center;">Todos los PC ensamblados en Vision Gaming cuentan con un año de garantía</h4>
-                    </div>
-                </div>
-            </div>               
-        </div>
-    </div>  
-</div>
-
 </producto>
-<hr>
 
 <!--Fin cotizacion-->
 

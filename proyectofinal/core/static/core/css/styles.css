@@ -1,0 +1,76 @@
+.footer {
+    background-color: #343a40;
+    color: white;
+}
+
+.footer a {
+    color: white;
+    background-color: #343a40;
+}
+
+.footer a:hover {
+    color: #007bff;
+}
+
+.carousel .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+
+body {
+    background-color: white;
+}
+
+.card {
+    background-color: white;
+    color: black;
+}
+
+.body-container {
+    background-color: white;
+}
+
+.btn-primary:hover{
+    color: black;
+    border-color: black;
+    background-color: #C70039;
+}
+
+.btn-outline-success {
+    background-color: #343a40;
+    color: red;
+    border-color: red;
+}
+
+.btn-outline-success:hover {
+    background-color: #C70039;
+    color: black;
+    border-color: black;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #343a40 ;
+    border-color: red;
+
+}
+
+.btn-secondary {
+    color: white;
+    background-color: gray;
+    border-color: red;
+}
+
+.btn-secondary:hover{
+    color: black;
+    border-color: black;
+    background-color: #C70039;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
