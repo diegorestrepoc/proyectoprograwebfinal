@@ -67,7 +67,8 @@ body {
     border-color: black;
     background-color: #C70039;
 }
-reloj { 
+
+.reloj { 
     color: whitesmoke;
     width: 250px;
     height: 50px; 
@@ -77,3 +78,10 @@ reloj {
     text-align: center;
     float: right; margin: 1em 3em 1em 1em;
 }
+
+.marco {
+    height: 400px;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 800px;
+    }
