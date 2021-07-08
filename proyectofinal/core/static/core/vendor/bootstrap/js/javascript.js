@@ -9,7 +9,8 @@ function apagarLuz() {
     var letraClara = '#ffffff';
     document.body.style.background = colorOscuro;
     document.body.style.color = letraClara;
-    document.card.style = colorOscuro;
+    
+
 
 }
 

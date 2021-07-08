@@ -37,9 +37,9 @@
 
 <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item">
             
-            <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Inicio </a>
         </li>
         
         <li class="nav-item">
@@ -55,23 +55,22 @@
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Control de Productos
             </button>
+            
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/listarproducto">Lista de productos</a>
+                {% if perms.core.add_producto %}
               <a class="dropdown-item" href="/agregarproducto/">Agregar productos</a>
-              <a class="dropdown-item" href="#">Modificar productos</a>
-              <a class="dropdown-item" href="#">Eliminar productos</a>
+                {% endif %}
+              
             </div>
           </div>
     </ul>
 </div>
 
-<button style="margin: 10px" class="btn btn-success d-flex mt-4 mb-4" type="button" onclick="apagarLuz()">Modo Oscuro</button>
+<button onclick="apagarLuz()" style="background-color: #343a40;"><img class="logo-luna" src="{% static 'core/img/luna.png' %}" height="25px"></button>
+<button onclick="encenderLuz()" style="background-color: #343a40;"><img class="logo-luna" src="{% static 'core/img/sol.png' %}" height="25px"></button>
 
-<br>  <br/>
 
-<button style="margin: 10px" class="btn btn-success d-flex mt-4 mb-4 " type="button" onclick="encenderLuz()">Modo tradicional</button>
-<div id="reloj" class="reloj" >00 : 00 : 00
-</div>
-<div id="actualizar" class="actualizar"></div>
     <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Buscar</button>

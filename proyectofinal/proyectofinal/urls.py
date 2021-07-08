@@ -15,14 +15,14 @@ Including another URLconf
 """
 
 
+
 from django.contrib import admin
 from django.urls import path, include
 from core import views
-from core.views import ProductoViewset
-from django.conf import settings
-
+from core.views import ProductoViewset, lista_producto
 from django.conf import settings
 from rest_framework import routers
+
 
 router = routers.DefaultRouter()
 router.register('producto', ProductoViewset)
@@ -34,7 +34,11 @@ urlpatterns = [
     path('cotizacion/',views.cotizacion, name='cotizacion'),
     path('iniciosesion/',views.iniciosesion, name='iniciosesion'),
     path('registro/',views.registro, name='registro'),
-    path('agregarproducto/',views.add_producto, name='agregar producto'),
+    path('agregarproducto/',views.add_producto, name='agregar_producto'),
+    path('listarproducto/',views.listarproductos, name='listar_producto'),
+    path('modificarproducto/<idProducto>/',views.modificarproducto, name='modificar_producto'),
+    path('eliminarproducto/<idProducto>/', views.eliminarproducto, name='eliminar_producto'),
+    path('lista_productos', lista_producto, name="lista_productos"),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
 ]

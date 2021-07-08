@@ -67,13 +67,4 @@ body {
     border-color: black;
     background-color: #C70039;
 }
-reloj { 
-    color: whitesmoke;
-    width: 250px;
-    height: 50px; 
-    padding: 9px 18px; 
-    border: 2px solid #ff7300; 
-    font: bold 1em dotum, "lucida sans", arial; 
-    text-align: center;
-    float: right; margin: 1em 3em 1em 1em;
-}
+

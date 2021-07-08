@@ -64,14 +64,24 @@
             <div class="col-12 col-md-6 offset-md-3">
 
                 <form action="" method="post">
-
-                    {% csrf_token %}
-                    {{ form | crispy }}
-
-                    <div class="d-flex justify-content-center">
-                        <input style="color: grey" type="reset" value="Limpiar">
-                        <input class="btn btn-secondary" type="submit" value="Registrar">
-                    </div> 
+                    <div class="container">
+                        <div class="table-responsive-md">
+                            <div class="row ">
+                                <div class="col-md-6">
+                                    {% csrf_token %}
+                                    {{ form | crispy }}
+                                    <div class="d-flex justify-content-center">
+                                        <input style="color: grey" type="reset" value="Cancelar">
+                                        <input class="btn btn-secondary" type="submit" value="Enviar">
+                                    </div>                                
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="{% static 'core/img/promo newsletter/promo.jpg' %}" alt="">
+                                    
+                                </div>                            
+                            </div>                       
+                        </div>
+                    </div>
                 </form>
                 {{mensaje}}
 
@@ -79,12 +89,10 @@
         </div>
                    
     </div>
-</div>                              
+</div>                                           
                                 
 
-        <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
-        <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
 
     
    

@@ -2,12 +2,16 @@
 {%block title%}Nosotros{% endblock %}
 {%block content%}
     {% load static %}
+
 <!--Fin navbar-->
 <div class="container">
-    <div class="jumbotron text-center mb-8">
+    <div class="jumbotron text-center mb-8" style="background-color: rgba(94, 71, 156, 0.63);">
         <h1>Bienvenido a VisionGaming</h1>
-        <h3 id="saludo"></h3>
-    </div>
+        <div id="reloj" class="reloj" >00 : 00 : 00
+        </div>
+        <div id="actualizar" class="actualizar"></div>
+        
+        </div>
 </div>
 <body>
 
@@ -76,14 +80,14 @@
         <hr>
         
         <div class="row mt-4 mb-4">
-           
-            {% for producto in productos %}
+           <div class="card-group mt-3"></div>
+            {% for producto in entity %}
             <div class="col-md-4 mb-2 mt-2">
                
                 <div class="card ">
                    
                     <div class="card-header">
-                        <img class="card-img-top" src="{{ producto.imagen.url }}" width="300" height="200" alt="">
+                        <img class="card-img-top" src="{{ producto.imagen.url }}" alt="">
                     </div>
                     
                     <div class="card-body">
@@ -108,6 +112,7 @@
             {% endfor %}
            
         </div>
+        {% include 'core/paginator.html' %}
     </div>
     
     <br>
@@ -260,14 +265,7 @@
             </div>
           </div>
     </div>
-    <!--fin tablist-->
 
-       <!--Footer Section -->
-       
-       <!-- FIN Footer Section -->
-
-       <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
-       <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
 
 
