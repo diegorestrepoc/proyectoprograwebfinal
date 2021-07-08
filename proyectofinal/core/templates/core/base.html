@@ -14,6 +14,7 @@
     
     <!-- Bootstrap -->
     <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'core/vendor/bootstrap/css/JavaScript.css' %}">
 
     <!-- Fuentes -->
     <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
@@ -52,6 +53,13 @@
         </li>
     </ul>
 </div>
+
+<button style="margin: 10px" class="btn btn-success d-flex mt-4 mb-4" type="button" onclick="apagarLuz()">Modo Oscuro</button>
+
+<br>  <br/>
+
+<button style="margin: 10px" class="btn btn-success d-flex mt-4 mb-4 " type="button" onclick="encenderLuz()">Modo tradicional</button>
+
     <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Buscar</button>
@@ -101,6 +109,11 @@
             <div class="col-sm-12 col-md-3 mt-3 "></div>
             <p class="main-footer text-center" style="color: gray;">Comercializadora S.A., Rut N° xxxx domiciliada en calle xxx, Santiago, Chile. Represente legal: xxxx</p>
             </div>
+            <div id="reloj" class="reloj">00 : 00 : 00
+            </div>
+            <div id="actualizar" class="actualizar"
+    
+        ></div>
         </div>
     </footer>
     <!-- FIN Footer Section -->
@@ -111,6 +124,7 @@
 <!-- Bootstrap core JavaScript -->
 <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
 <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'core/vendor/bootstrap/js/JavaScript.js' %}"></script>
 </main>
     
 </body>
